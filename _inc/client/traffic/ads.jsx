@@ -223,7 +223,9 @@ export const Ads = withModuleSettingsFormHelpers(
 					<SettingsGroup
 						hasChild
 						support={ {
-							text: __( 'Help Text' ), // @TODO update
+							text: __(
+								'This feature will add a consent banner for site visitors in California, as well as a global opt-out for targeted advertising.'
+							),
 							link: 'https://jetpack.com/support/ads/',
 						} }
 					>
@@ -242,13 +244,24 @@ export const Ads = withModuleSettingsFormHelpers(
 						</CompactFormToggle>
 						{ wordads_ccpa_enabled && (
 							<FormFieldset>
-								<br />
 								<p>
-									The California Consumer Privacy Act (CCPA) requires that ... consent is obtained
-									... legal requirements, etc.
-									<br />
-									This feature will add a consent banner for site visitors in California, as well as
-									a global opt-out for targeted advertising.
+									<small className="jp-form-setting-explanation">
+										{ __(
+											'For more information about the California Consumer Privacy Act (CCPA) {{br/}}and how it pertains to your site, please consult our guide to {{link}}WordAds CCPA Compliance{{/link}}.',
+											{
+												components: {
+													br: <br />,
+													link: (
+														<a
+															href="https://wordads.co/ccpa"
+															target="_blank"
+															rel="noopener noreferrer"
+														/>
+													),
+												},
+											}
+										) }
+									</small>
 								</p>
 							</FormFieldset>
 						) }
@@ -315,7 +328,9 @@ export const Ads = withModuleSettingsFormHelpers(
 					<SettingsGroup
 						hasChild
 						support={ {
-							text: __( 'Help Text' ), // @TODO update
+							text: __(
+								'Ads.txt (Authorized Digital Sellers) is a mechanism that enables content owners to declare who is authorized to sell their ad inventory. It’s the formal list of advertising partners you support as a publisher.'
+							),
 							link: 'https://jetpack.com/support/ads/',
 						} }
 					>
