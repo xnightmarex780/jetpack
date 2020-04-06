@@ -51,10 +51,6 @@ $player-float-background: $light-gray-200;
 	 * &.is-error {}   // When playback error occured.
 	 */
 
-	audio {
-		display: none;
-	}
-
 	/**
 	 * Reset vertical padding for <section /> elements.
 	 * For instance, Twenty-Twenty sets `padding: 8rem 0`.
@@ -294,6 +290,16 @@ $player-float-background: $light-gray-200;
 
 		&.is-default .jetpack-podcast-player__track-status-icon {
 			display: none;
+		}
+	}
+
+	/**
+	 * Style overrides for AMP version.
+	 */
+	&.is-amp {
+		.jetpack-podcast-player__audio-player {
+			display: block;
+			padding: 0 $player-grid-spacing;
 		}
 	}
 
