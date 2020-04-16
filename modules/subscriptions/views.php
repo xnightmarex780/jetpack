@@ -351,17 +351,32 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 					}
 					?>
 					<p id="subscribe-email">
-						<input type="text" name="email"
-                    		<?php if ( ! empty( $email_field_classes ) ) { ?>
-	                        	class="<?php echo esc_attr( $email_field_classes ); ?>"
-	                    	<?php } ?>
-		                	<?php if ( ! empty( $email_field_styles ) ) { ?>
-			                	style="<?php echo esc_attr( $email_field_styles ); ?>"
-		                	<?php } else { ?>
-                    			style="width: 95%; padding: 1px 2px"
-                    		<?php } ?> placeholder="<?php esc_attr_e( 'Enter your email address' ); ?>" value="" id="subscribe-field<?php if ( Jetpack_Subscriptions_Widget::$instance_count > 1 ) {
-								echo '-' . Jetpack_Subscriptions_Widget::$instance_count;
-					    	} ?>"/>
+						<?php
+						printf(
+							'<input
+								type="text"
+								name="email"
+								%1$s
+								style="%2$s"
+								placeholder="%3$s"
+								value=""
+								id="subscribe-field%4$s
+							/>',
+							( ! empty( $email_field_classes )
+								? 'class="' . esc_attr( $email_field_classes ) . '"'
+								: ''
+							),
+							( ! empty( $email_field_styles )
+								? esc_attr( $email_field_styles )
+								: 'width: 95%; padding: 1px 2px'
+							),
+							esc_attr__( 'Enter your email address' ), // phpcs:ignore WordPress.WP.I18n.MissingArgDomain -- This is only used on WordPress.com.
+							( absint( self::$instance_count ) > 1
+								? '-' . absint( self::$instance_count )
+								: ''
+							)
+						);
+						?>
 					</p>
 				<?php endif; ?>
 
