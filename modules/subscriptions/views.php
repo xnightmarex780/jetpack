@@ -351,7 +351,7 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 					}
 					?>
 					<p id="subscribe-email">
-                    	<input type="text" name="email"
+						<input type="text" name="email"
                     		<?php if ( ! empty( $email_field_classes ) ) { ?>
 	                        	class="<?php echo esc_attr( $email_field_classes ); ?>"
 	                    	<?php } ?>
