@@ -301,6 +301,9 @@ $player-float-background: $light-gray-200;
 			display: block;
 			padding: 0 $player-grid-spacing;
 		}
+		.jetpack-podcast-player__track[selected]:not(:focus) {
+			outline: none;
+		}
 	}
 
 	/**
