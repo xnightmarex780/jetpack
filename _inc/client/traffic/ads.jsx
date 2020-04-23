@@ -264,7 +264,7 @@ export const Ads = withModuleSettingsFormHelpers(
 								<p>
 									<FormLegend>{ __( 'Do Not Sell Link' ) }</FormLegend>
 									{ __(
-										'CCPA requires that you place a "Do Not Sell My Personal Information" link on every page of your site where targeted advertising will appear. {{br/}}You can use the {{widgetLink}}CCPA Consent Widget{{/widgetLink}}, or the {{code}}[ccpa-do-not-sell-link]{{/code}} shortcode to automatically place this link on your site.',
+										'CCPA requires that you place a "Do Not Sell My Personal Information" link on every page of your site where targeted advertising will appear. {{br/}}You can use the {{widgetLink}}Do Not Sell Link (CCPA) Widget{{/widgetLink}}, or the {{code}}[ccpa-do-not-sell-link]{{/code}} shortcode to automatically place this link on your site. Note: the link will always display to logged in administrators regardless of geolocation.',
 										{
 											components: {
 												br: <br />,
