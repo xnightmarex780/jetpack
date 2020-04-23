@@ -1639,9 +1639,12 @@ class Jetpack {
 
 	/**
 	 * Is Jetpack active?
+	 * The method only checks if there's an existing token for the master user. It doesn't validate the token.
+	 *
+	 * @return bool
 	 */
 	public static function is_active() {
-		return (bool) Jetpack_Data::get_access_token( JETPACK_MASTER_USER );
+		return self::connection()->is_active();
 	}
 
 	/**
@@ -3363,10 +3366,10 @@ p {
 			$tracking = new Tracking();
 			$tracking->record_user_event( 'disconnect_site', array() );
 
-			$connection->disconnect_site_wpcom();
+			$connection->disconnect_site_wpcom( true );
 		}
 
-		$connection->delete_all_connection_tokens();
+		$connection->delete_all_connection_tokens( true );
 		Jetpack_IDC::clear_all_idc_options();
 
 		if ( $update_activated_state ) {

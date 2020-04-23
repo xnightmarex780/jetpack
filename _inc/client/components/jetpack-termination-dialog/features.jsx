@@ -158,8 +158,8 @@ class JetpackTerminationDialogFeatures extends Component {
 						</h2>
 						<p>
 							{ __(
-								'To fully disconnect your site from WordPress.com, you will need to deactivate following plugin:',
-								'To fully disconnect your site from WordPress.com, you will need to deactivate following plugins:',
+								'If you disconnect Jetpack from WordPress.com, the following plugin will also be disconnected:',
+								'If you disconnect Jetpack from WordPress.com, the following plugins will also be disconnected:',
 								{
 									count: connectedPlugins.length,
 								}
