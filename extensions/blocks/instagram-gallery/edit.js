@@ -40,10 +40,11 @@ const InstagramGalleryEdit = props => {
 
 	const [ images, setImages ] = useState( [] );
 	const [ isLoadingGallery, setIsLoadingGallery ] = useState( false );
-	const { isConnecting, connectToService, disconnectFromService } = useConnectInstagram(
+	const { isConnecting, connectToService, disconnectFromService } = useConnectInstagram( {
+		accessToken,
 		setAttributes,
-		setImages
-	);
+		setImages,
+	} );
 
 	const unselectedCount = count > images.length ? images.length : count;
 
